@@ -3,17 +3,7 @@ import math, csv, time, numpy as np
 
 
 print('Prime Number Generator')
-#validate input is an integer a number
-# while True:    
-#     try:
-#         num = int(input('Enter a positive integer: '))
-#         if num <= 0:
-#             print('That is not a positive integer, please input a positive integer')
-#             continue
-#         break
-#     except ValueError:
-#         print('This is not a valid input.  Please enter a positive integer')
-# #validate input is an integer and a number
+
 while True:
     try:
         usin = int(input('How many prime numbers forward would you like to output? '))
@@ -26,7 +16,7 @@ while True:
 start_time = time.time()
 num = 3
 nstart = num
-primecount = 0
+primecount = 2
 count = 0
 plist = [1, 2]
 print("List of Primes Found: ")
@@ -52,7 +42,7 @@ def primeTest (num):
         break
         #outfile.write(wr)
         #print ('Time to find prime: ', end_time-start_time )
-while count < usin:
+while primecount < usin:
     primeTest(num)
     num += 2
     count += 1
@@ -74,3 +64,4 @@ with open('prime.csv', 'w', newline='') as outFile:
       #wr.writerow(report)
       wr.writerow(plist)  
 outFile.close()
+
